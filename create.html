@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 Cities Health Data Project - Insert Data</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #007BFF, #FFA500);
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* Styles for the form */
+        .form-section {
+            padding: 50px 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, #007BFF, #FFA500);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html" class="animate__animated animate__fadeInLeft"><i class="fas fa-home"></i> Home</a>
+        <a href="search.html" class="animate__animated animate__fadeInLeft animate__delay-1s"><i class="fas fa-search"></i> Search Health Metrics</a>
+        <a href="create.html" class="animate__animated animate__fadeInLeft animate__delay-2s"><i class="fas fa-plus"></i> Add Data</a>
+        <a href="graph.html" class="animate__animated animate__fadeInLeft animate__delay-3s"><i class="fas fa-chart-bar"></i> Graph</a>
+        <a href="aboutus.html" class="animate__animated animate__fadeInLeft animate__delay-4s"><i class="fas fa-info-circle"></i> About Us</a>
+    </div>
+
+    <!-- Data Insertion Form -->
+    <section class="container mt-5 form-section">
+        <div class="form-container">
+            <h2 class="text-center mb-5">Insert City Data</h2>
+            <form>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" class="form-control" id="state" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="population">Population:</label>
+                    <input type="number" class="form-control" id="population" required>
+                </div>
+                <div class="form-group">
+                    <label for="geoMeasure">Geographic Measure:</label>
+                    <input type="text" class="form-control" id="geoMeasure" required>
+                </div>
+                <div class="form-group">
+                    <label for="lowLimit">Low Confidence Limit:</label>
+                    <input type="number" class="form-control" id="lowLimit" required>
+                </div>
+                <div class="form-group">
+                    <label for="highLimit">High Confidence Limit:</label>
+                    <input type="number" class="form-control" id="highLimit" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input type="number" class="form-control" id="year" required>
+                </div>
+                <button type="submit" class="btn btn-gradient">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
