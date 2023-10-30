@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 Cities Health Data Project - Insert Data</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #007BFF, #FFA500);
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* Styles for the form */
+        .form-section {
+            padding: 50px 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, #007BFF, #FFA500);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+        }
+        .team-member {
+            width: 250px;
+            height: 550px;
+            overflow: hidden;
+        }
+
+        .team-member .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .flip-card {
+            background-color: transparent;
+            width: 250px;
+            height: 350px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: transparent;
+            color: black;
+        }
+
+        .flip-card-back {
+            background-color: #555;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Styles for the rounded (circular) image */
+        .card-img-top {
+            border-radius: 50%;  /* Makes the image circular */
+            width: 250px;        /* Fixed width */
+            height: 250px;       /* Fixed height */
+            object-fit: cover;   /* Ensures the image covers the fixed size without distortion */
+            margin: 15px auto;   /* Centers the image horizontally */
+        }
+        .data-model-image {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .github-btn-container {
+            text-align: right;       /* Align the button to the right */
+            margin-top: 10px;        /* Margin for some spacing from the navbar */
+        }
+
+        .github-btn {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .github-btn:hover {
+            background-color: #555;
+            color: white;
+        }
+        /* Contributions styles */
+        .contributions-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 10px;
+            padding: 10px;
+            width: 250px;
+        }
+
+        .contribution-item {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html" class="animate__animated animate__fadeInLeft"><i class="fas fa-home"></i> Home</a>
+        <a href="search.html" class="animate__animated animate__fadeInLeft animate__delay-1s"><i class="fas fa-search"></i> Search Health Metrics</a>
+        <a href="create.html" class="animate__animated animate__fadeInLeft animate__delay-2s"><i class="fas fa-plus"></i> Add Data</a>
+        <a href="graph.html" class="animate__animated animate__fadeInLeft animate__delay-3s"><i class="fas fa-chart-bar"></i> Graph</a>
+        <a href="aboutus.html" class="animate__animated animate__fadeInLeft animate__delay-4s"><i class="fas fa-info-circle"></i> About Us</a>
+    </div>
+    <!-- GitHub Button -->
+    <div class="github-btn-container">
+        <a href="https://github.com/YourGitHubUsername/YourRepo" class="github-btn" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+        </a>
+    </div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-4 animate__animated animate__fadeInLeft">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/1.jpg" alt="Team Member 1" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Vashistha</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>I'm a dedicated student on a journey to master the intricacies of business analytics and information systems. With a relentless passion for technology and automation, I'm driven to explore innovative solutions and opportunities in the ever-evolving tech landscape.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4 animate__animated animate__fadeInLeft animate__delay-1s">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/2.jpg" alt="Team Member 1" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">SAI RANADHEER GOUD MOSANPALLY</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>I am Sai Ranadheer, Pursuing my Master's in Business Analytics and Information Systems. With a passion for technology and business, I look forward to expanding my web development abilities through this course.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4 animate__animated animate__fadeInLeft animate__delay-2s">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/3.jpg" alt="Team Member 1" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Sreeja Katanguri</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>I'm Sreeja Katanguri, currently enrolled in a master's program in Business Analytics and Information Systems, has a long-standing passion for web technologies. Previously, I contributed my skills and knowledge at Accenture for a year, working as an Application Development Associate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4 animate__animated animate__fadeInLeft animate__delay-3s">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/4.jpg" alt="Team Member 1" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Kavya</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>A graduate Student pursuing Business Analytics and Information Systems at University of South Florida.Kavya worked as Data Management Associate in Accenture Solutions Private Limited for 1.5years.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Data Model Image Section -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="img/dataModel.png" alt="Data Model" class="data-model-image animate__animated animate__zoomIn animate__delay-4s">
+            </div>
+        </div>
+        <div class="contributions-container animate__animated animate__slideInUp animate__delay-5s">
+            <div class="contribution-item">
+                <span>Contributions</span>
+            </div>
+            <div class="contribution-item">
+                <span>Home Page</span>
+                <span>Vashishta</span>
+            </div>
+            <div class="contribution-item">
+                <span>Search Page</span>
+                <span>Ranadheer</span>
+            </div>
+            <div class="contribution-item">
+                <span>Add Data & Graph Pages</span>
+                <span>Sreeja</span>
+            </div>
+            <div class="contribution-item">
+                <span>Aboutus Page</span>
+                <span>Kavya</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
